@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour{
 
     public void LowDifficulty()
     {
-        SceneManager.LoadScene("RoadAsmaaAndMoaaz");
+        SceneManager.LoadScene("road asmaa and moaaz");
     }
     public void HighDifficulty()
     {

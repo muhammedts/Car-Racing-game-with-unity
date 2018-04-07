@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/GameScene.unity
+    guid: f3645836f24d3104abf9236f3bbb4122
+  - enabled: 1
+    path: Assets/_Scenes/Menu.unity
+    guid: 21435eac42e41de46842bd710479946e
+  - enabled: 1
+    path: Assets/_Scenes/moaaz.unity
+    guid: c018b35a5b097bc4090bb6e5b5afc1d6
+  - enabled: 1
+    path: Assets/road asmaa and moaaz.unity
+    guid: d2a752e3cc168124bba4e8652b2fb1dc
