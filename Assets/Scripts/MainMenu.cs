@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour{
 
-    public void PlayGame()
+    public void LowDifficulty()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("RoadAsmaaAndMoaaz");
     }
+    public void HighDifficulty()
+    {
+        SceneManager.LoadScene("");
+    }
+
     public void QuitGame()
     {
         Debug.Log("QUIT!");
