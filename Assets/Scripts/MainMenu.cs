@@ -7,11 +7,11 @@ public class MainMenu : MonoBehaviour{
 
     public void LowDifficulty()
     {
-        SceneManager.LoadScene("road asmaa and moaaz");
+        SceneManager.LoadScene("Track");
     }
     public void HighDifficulty()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("road asmaa and moaaz");
     }
 
     public void QuitGame()
