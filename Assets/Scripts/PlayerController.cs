@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed;
-
+    public float jumpSpeed;
     private Rigidbody rb;
 
     void Start()
@@ -13,13 +13,21 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Vector3 atas = new Vector3(0, 20, 0);
+            rb.AddForce(atas * jumpSpeed);
+        }
+        else
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        rb.AddForce(movement * speed);
+            rb.AddForce(movement * speed);
+        }
     }
 }
