@@ -6,15 +6,15 @@ public class CameraController : MonoBehaviour
 
     public GameObject player;
 
-    private Vector3 offset;
+    public float carx;
+    public float cary;
+    public float carz;
 
-    void Start()
+    void Update()
     {
-        offset = transform.position - player.transform.position;
-    }
-
-    void LateUpdate()
-    {
-        transform.position = player.transform.position + offset;
+        carx = player.transform.eulerAngles.x;
+        cary = player.transform.eulerAngles.y;
+        carz = player.transform.eulerAngles.z;
+        transform.eulerAngles = new Vector3(carx - carx,cary, carz - carz);
     }
 }   
