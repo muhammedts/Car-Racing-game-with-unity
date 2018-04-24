@@ -7,11 +7,9 @@ public class HalfPointTargger : MonoBehaviour {
     // Use this for initialization
     public GameObject LapCompleteTrig;
     public GameObject HalfLapTrig;
-    void onTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
         LapCompleteTrig.SetActive(true);
         HalfLapTrig.SetActive(false);
-        
-
     }
 }
