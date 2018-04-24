@@ -18,7 +18,7 @@ public class LapComplete : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(LapTimeManager.SecCount <= 0)
+        if(LapTimeManager.SecCount <= 9)
         {
             SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
         } else
@@ -27,14 +27,14 @@ public class LapComplete : MonoBehaviour {
             SecDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecCount + ".";
 
         }
-        if (LapTimeManager.MintCount <= 0)
+        if (LapTimeManager.MintCount <= 9)
         {
-            MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MintCount + ".";
+            MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MintCount + ":";
         }
         else
         {
 
-            MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MintCount + ".";
+            MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MintCount + ":";
 
         }
         MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
