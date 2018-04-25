@@ -15,13 +15,16 @@ public class LapComplete : MonoBehaviour {
     public GameObject MilliDisplay;
     public GameObject LapTimeBox;
     public GameObject LapCounter;
+    public GameObject RaceFinish;
+
+
     public int lapsDone = 0;
     public float RawTime;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        
+         
             lapsDone += 1;
         
         if(LapTimeManager.SecCount <= 9)
@@ -59,6 +62,10 @@ public class LapComplete : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(lapsDone == 2)
+        {
+            RaceFinish.SetActive(true);
+        }
 		
 	}
 
