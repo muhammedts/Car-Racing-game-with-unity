@@ -4777,8 +4777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30da19bf28255544f964082b0dc548cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LapCompleteTrig: {fileID: 1050537987}
-  HalfLapTrig: {fileID: 488884204}
 --- !u!23 &488884206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5369,8 +5367,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.672104, y: 35.408073, z: 146.6415}
-  m_Center: {x: -3.8493783, y: 17.716507, z: -16.303185}
+  m_Size: {x: 2.1784263, y: 35.408073, z: 135.75314}
+  m_Center: {x: -3.6025436, y: 17.716507, z: -21.747375}
 --- !u!1001 &511558158
 Prefab:
   m_ObjectHideFlags: 0
