@@ -16,14 +16,14 @@ public class LapComplete : MonoBehaviour {
     public GameObject LapTimeBox;
     public GameObject LapCounter;
     public int lapsDone = 0;
+    public float RawTime;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if(lapsDone != 2)
-        {
+        
             lapsDone += 1;
-        }
+        
         if(LapTimeManager.SecCount <= 9)
         {
             SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
