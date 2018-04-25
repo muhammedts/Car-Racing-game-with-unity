@@ -8393,7 +8393,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -8417,7 +8417,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &713521950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12098,6 +12098,8 @@ MonoBehaviour:
   SecDisplay: {fileID: 1882656719}
   MilliDisplay: {fileID: 491305371}
   LapTimeBox: {fileID: 0}
+  LapCounter: {fileID: 0}
+  lapsDone: 0
 --- !u!1 &1052523495
 GameObject:
   m_ObjectHideFlags: 0
@@ -12662,7 +12664,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
