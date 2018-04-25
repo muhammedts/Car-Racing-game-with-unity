@@ -15,15 +15,15 @@ public class LapComplete : MonoBehaviour {
     public GameObject MilliDisplay;
     public GameObject LapTimeBox;
     public GameObject LapCounter;
-    public int lapsDone;
+    public int lapsDone = 0;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        for (int i = 1; i <= 2; i++)
+        if(lapsDone != 2)
         {
-            lapsDone += i;
-        } 
+            lapsDone += 1;
+        }
         if(LapTimeManager.SecCount <= 9)
         {
             SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
