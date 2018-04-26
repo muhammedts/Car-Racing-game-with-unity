@@ -25,7 +25,7 @@ public class Countdown : MonoBehaviour
         CountDown.GetComponent<Text>().text = "3";
         GetReady.Play();
         CountDown.SetActive(true);
-        Debug.Log("da5al");
+     //   Debug.Log("da5al");
         yield return new WaitForSeconds(1);
         CountDown.SetActive(false);
         CountDown.GetComponent<Text>().text = "2";
