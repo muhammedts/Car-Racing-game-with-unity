@@ -16,43 +16,96 @@ public class LapComplete : MonoBehaviour {
     public GameObject LapTimeBox;
     public GameObject LapCounter;
     public GameObject RaceFinish;
+    public GameObject player;
+    public GameObject ai;
 
 
     public int lapsDone = 0;
+    public int lapsDoneAi = 0;
+
     public float RawTime;
-
-
-    private void OnTriggerEnter(Collider other)
+  /*  void OnCollisionEnter(Collision col)
     {
-         
+        if (col.gameObject.tag == "Playercar")
+        {
             lapsDone += 1;
+
+
+            if (LapTimeManager.SecCount <= 9)
+            {
+                SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
+            }
+            else
+            {
+
+                SecDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecCount + ".";
+
+            }
+            if (LapTimeManager.MintCount <= 9)
+            {
+                MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MintCount + ":";
+            }
+            else
+            {
+
+                MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MintCount + ":";
+
+            }
+            MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
+            LapCounter.GetComponent<Text>().text = "" + lapsDone;
+            LapTimeManager.MintCount = 0;
+            LapTimeManager.SecCount = 0;
+            LapTimeManager.MilliCount = 0;
+            HalfLapTrig.SetActive(true);
+            LapCompleteTrig.SetActive(false);
+        }
+    }*/
+
+        public Collision collision;
+    private void OnTriggerEnter( Collider other)
+
+    {
         
-        if(LapTimeManager.SecCount <= 9)
+        
+        
+        Debug.Log("5555555555555555555555555");
+        if (other)
+           
         {
-            SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
-        } else
-        {
+            lapsDone += 1;
+            Debug.Log("Do something here");
 
-            SecDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecCount + ".";
 
+            if (LapTimeManager.SecCount <= 9)
+            {
+                SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
+            }
+            else
+            {
+
+                SecDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecCount + ".";
+
+            }
+            if (LapTimeManager.MintCount <= 9)
+            {
+                MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MintCount + ":";
+            }
+            else
+            {
+
+                MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MintCount + ":";
+
+            }
+            MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
+            LapCounter.GetComponent<Text>().text = "" + lapsDone;
+            LapTimeManager.MintCount = 0;
+            LapTimeManager.SecCount = 0;
+            LapTimeManager.MilliCount = 0;
+            HalfLapTrig.SetActive(true);
+            LapCompleteTrig.SetActive(false);
+        }else{
+            Debug.Log("adwadaw");
         }
-        if (LapTimeManager.MintCount <= 9)
-        {
-            MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MintCount + ":";
-        }
-        else
-        {
-
-            MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MintCount + ":";
-
-        }
-        MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
-        LapCounter.GetComponent<Text>().text = "" + lapsDone;
-        LapTimeManager.MintCount = 0;
-        LapTimeManager.SecCount = 0;
-        LapTimeManager.MilliCount = 0;
-        HalfLapTrig.SetActive(true);
-        LapCompleteTrig.SetActive(false);
     }
 
     // Use this for initialization
