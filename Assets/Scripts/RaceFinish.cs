@@ -65,16 +65,23 @@ public class RaceFinish : MonoBehaviour
             CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
+            Mycar.SetActive(true);
+
+
+
+
+            FinishCam.SetActive(true);
+            Cam.SetActive(false);
+<<<<<<< HEAD
+            end.SetActive(true);
+            lose.SetActive(true);
+=======
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
             TimerMange.SetActive(false);
 
-
-            FinishCam.SetActive(true);
-            Cam.SetActive(false);
-            end.SetActive(true);
-            lose.SetActive(true);
+>>>>>>> 8ab2b5161f1cd1d18c22929589154ec38f8827ab
 
 
         }
