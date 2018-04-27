@@ -14,7 +14,6 @@ public class RaceFinish : MonoBehaviour
     public GameObject win;
     public GameObject lose;
     public GameObject PlayAgain;
-    public GameObject lab;
 
 
 
@@ -37,9 +36,7 @@ public class RaceFinish : MonoBehaviour
             Cam.SetActive(false);
             TimerMange.SetActive(false);
 
-            LapTimeManager.MintCount = 0;
-            LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;
+        
             end.SetActive(true);
             win.SetActive(true);
             PlayAgain.SetActive(true);
@@ -58,9 +55,6 @@ public class RaceFinish : MonoBehaviour
             Cam.SetActive(false);
             TimerMange.SetActive(false);
 
-            LapTimeManager.MintCount = 0;
-            LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
