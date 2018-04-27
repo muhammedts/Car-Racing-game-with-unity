@@ -3740,6 +3740,7 @@ MonoBehaviour:
   Cam: {fileID: 564830340}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end: {fileID: 2011958626}
   win: {fileID: 728953322}
   lose: {fileID: 2013921904}
@@ -3752,6 +3753,12 @@ MonoBehaviour:
 >>>>>>> e58ed89eabc6e1e5eb99a5c6bbd016846a79a1e3
   TimerMange: {fileID: 0}
 >>>>>>> parent of 06886be... Revert "Merge branch 'master' of https://github.com/muhammedts/wrecking-ball"
+=======
+  end: {fileID: 0}
+  win: {fileID: 0}
+  lose: {fileID: 0}
+  TimerMange: {fileID: 0}
+>>>>>>> parent of c2954cc... Revert "push"
 =======
   end: {fileID: 0}
   win: {fileID: 0}
