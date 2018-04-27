@@ -18,15 +18,13 @@ public class LapComplete : MonoBehaviour {
     public GameObject RaceFinish;
     public GameObject Player;
     public GameObject Ai;
-    public GameObject TimerMange;
 
 
 
 
 
 
-
-
+    
     public static int lapsDone=0;
 
     public float RawTime;
@@ -37,7 +35,6 @@ public class LapComplete : MonoBehaviour {
         
         if (other.gameObject.CompareTag("playercar"))
         {
-
            
             lapsDone += 1;
             Debug.Log(other.gameObject.tag);
