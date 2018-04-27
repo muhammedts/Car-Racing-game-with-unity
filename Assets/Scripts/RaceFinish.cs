@@ -10,14 +10,9 @@ public class RaceFinish : MonoBehaviour
     public GameObject FinishCam;
     public GameObject Cam;
 <<<<<<< HEAD
-<<<<<<< HEAD
     public GameObject end;
     public GameObject win;
     public GameObject lose;
-=======
-    public GameObject TimerMange;
-
->>>>>>> ffa15855b45451b698da002bf880505934776c2b
 =======
     public GameObject TimerMange;
 
@@ -44,12 +39,9 @@ public class RaceFinish : MonoBehaviour
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
 <<<<<<< HEAD
-<<<<<<< HEAD
             end.SetActive(true);
             win.SetActive(true);
 =======
-=======
->>>>>>> ffa15855b45451b698da002bf880505934776c2b
             TimerMange.SetActive(false);
            
 
