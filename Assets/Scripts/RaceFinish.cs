@@ -9,6 +9,8 @@ public class RaceFinish : MonoBehaviour
     public GameObject CompleteTrig;
     public GameObject FinishCam;
     public GameObject Cam;
+    public GameObject TimerMange;
+
 
 
 
@@ -30,6 +32,8 @@ public class RaceFinish : MonoBehaviour
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
+            TimerMange.SetActive(false);
+           
 
 
         }
@@ -45,6 +49,8 @@ public class RaceFinish : MonoBehaviour
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
+            TimerMange.SetActive(false);
+
 
             FinishCam.SetActive(true);
             Cam.SetActive(false);
