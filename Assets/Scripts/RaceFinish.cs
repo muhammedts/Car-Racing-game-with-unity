@@ -10,7 +10,10 @@ public class RaceFinish : MonoBehaviour
     public GameObject FinishCam;
     public GameObject Cam;
     public GameObject TimerMange;
-
+    public GameObject end;
+    public GameObject win;
+    public GameObject lose;
+    public GameObject PlayAgain;
 
 
 
@@ -33,7 +36,9 @@ public class RaceFinish : MonoBehaviour
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
             TimerMange.SetActive(false);
-           
+            end.SetActive(true);
+            win.SetActive(true);
+            PlayAgain.SetActive(true);
 
 
         }
@@ -50,10 +55,13 @@ public class RaceFinish : MonoBehaviour
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
             TimerMange.SetActive(false);
-
+            Mycar.SetActive(true);
 
             FinishCam.SetActive(true);
             Cam.SetActive(false);
+            end.SetActive(true);
+            lose.SetActive(true);
+            PlayAgain.SetActive(true);
 
 
 
