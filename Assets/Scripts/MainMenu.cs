@@ -13,6 +13,10 @@ public class MainMenu : MonoBehaviour{
     {
         SceneManager.LoadScene("road asmaa and moaaz");
     }
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("road asmaa and moaaz");
+    }
 
     public void QuitGame()
     {
