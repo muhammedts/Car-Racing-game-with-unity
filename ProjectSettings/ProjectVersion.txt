@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 m_EditorVersion: 2017.4.0f1
+=======
+<<<<<<< HEAD
+m_EditorVersion: 2017.3.1f1
+=======
+m_EditorVersion: 2017.2.1f1
+>>>>>>> e58ed89eabc6e1e5eb99a5c6bbd016846a79a1e3
+>>>>>>> parent of 06886be... Revert "Merge branch 'master' of https://github.com/muhammedts/wrecking-ball"
