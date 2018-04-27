@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour{
     }
     public void PlayAgain()
     {
-        SceneManager.LoadScene("road asmaa and moaaz");
+        SceneManager.LoadScene("Menu");
     }
 
     public void QuitGame()
