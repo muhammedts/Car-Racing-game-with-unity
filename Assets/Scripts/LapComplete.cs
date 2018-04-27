@@ -71,7 +71,7 @@ public class LapComplete : MonoBehaviour {
         }
       
 
-        if (lapsDone == 2 )
+        if (lapsDone == 1 )
         {
             Debug.Log("finish");
             RaceFinish.SetActive(true);

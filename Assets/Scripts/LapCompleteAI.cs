@@ -33,7 +33,7 @@ public class LapCompleteAI : MonoBehaviour {
         }
 
 
-        if (lapsDoneAI == 2)
+        if (lapsDoneAI == 1)
         {
             RaceFinish.SetActive(true);
         }
