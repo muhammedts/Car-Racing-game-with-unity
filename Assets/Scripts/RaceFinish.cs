@@ -9,14 +9,10 @@ public class RaceFinish : MonoBehaviour
     public GameObject CompleteTrig;
     public GameObject FinishCam;
     public GameObject Cam;
-<<<<<<< HEAD
     public GameObject end;
     public GameObject win;
     public GameObject lose;
-=======
     public GameObject TimerMange;
-
->>>>>>> ffa15855b45451b698da002bf880505934776c2b
 
 
 
@@ -38,14 +34,9 @@ public class RaceFinish : MonoBehaviour
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
-<<<<<<< HEAD
             end.SetActive(true);
             win.SetActive(true);
-=======
             TimerMange.SetActive(false);
-           
-
->>>>>>> ffa15855b45451b698da002bf880505934776c2b
 
         }
         else
