@@ -24,12 +24,60 @@ public class LapComplete : MonoBehaviour {
 
 
 
-    public static int lapsDoneAI;
-    public static int lapsDone;
+    
+    public static int lapsDone=0;
 
     public float RawTime;
 
+    private void OnTriggerEnter(Collider other)
+    {
+       
+        
+        if (other.gameObject.CompareTag("playercar"))
+        {
+           
+            lapsDone += 1;
+            Debug.Log(other.gameObject.tag);
 
+            if (LapTimeManager.SecCount <= 9)
+            {
+                SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
+            }
+            else
+            {
+
+                SecDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecCount + ".";
+
+            }
+            if (LapTimeManager.MintCount <= 9)
+            {
+                MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MintCount + ":";
+            }
+            else
+            {
+
+                MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MintCount + ":";
+
+            }
+            MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
+            LapCounter.GetComponent<Text>().text = "" + lapsDone;
+            LapTimeManager.MintCount = 0;
+            LapTimeManager.SecCount = 0;
+            LapTimeManager.MilliCount = 0;
+            HalfLapTrig.SetActive(true);
+            LapCompleteTrig.SetActive(false);
+
+
+        }
+      
+
+        if (lapsDone == 2 )
+        {
+            Debug.Log("finish");
+            RaceFinish.SetActive(true);
+        }
+    }
+    /*
     private void OnCollisionEnter(Collision other)
     {
 
@@ -83,7 +131,7 @@ public class LapComplete : MonoBehaviour {
             RaceFinish.SetActive(true);
         }
     }
-
+    */
     // Use this for initialization
     void Start () {
 		

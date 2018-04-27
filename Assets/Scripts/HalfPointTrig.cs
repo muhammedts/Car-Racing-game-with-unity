@@ -9,8 +9,13 @@ public class HalfPointTrig : MonoBehaviour {
     
     private void OnTriggerEnter(Collider other)
     {
-        LapCompleteTrig.SetActive(true);
-        HalfLapTrig.SetActive(false);
+        if (other.gameObject.tag == "playercar")
+        {
+            Debug.Log("playerhalf");
+            LapCompleteTrig.SetActive(true);
+            HalfLapTrig.SetActive(false);
+        }
+       
     }
 
 }
