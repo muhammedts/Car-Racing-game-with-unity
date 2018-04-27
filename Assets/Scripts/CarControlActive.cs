@@ -10,7 +10,10 @@ public class CarControlActive : MonoBehaviour
     void Start()
     {
         (CarControl.GetComponent("CarController") as MonoBehaviour).enabled = true;
+        (CarControl.GetComponent("CarUserControl") as MonoBehaviour).enabled = true;
         (AIControl.GetComponent("CarAIControl") as MonoBehaviour).enabled = true;
+        (AIControl.GetComponent("CarController") as MonoBehaviour).enabled = true;
+
 
 
     }
