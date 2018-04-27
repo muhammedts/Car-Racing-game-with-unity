@@ -3787,10 +3787,9 @@ MonoBehaviour:
   CompleteTrig: {fileID: 1050537987}
   FinishCam: {fileID: 1002701967}
   Cam: {fileID: 564830340}
-  end: {fileID: 0}
-  win: {fileID: 0}
-  lose: {fileID: 0}
-  TimerMange: {fileID: 0}
+  end: {fileID: 2011958626}
+  win: {fileID: 728953322}
+  lose: {fileID: 2013921904}
 --- !u!23 &310087214
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9665,11 +9664,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
