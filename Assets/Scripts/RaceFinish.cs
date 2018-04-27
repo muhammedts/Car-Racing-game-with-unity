@@ -14,6 +14,9 @@ public class RaceFinish : MonoBehaviour
     public GameObject win;
     public GameObject lose;
     public GameObject PlayAgain;
+    public GameObject lab;
+
+
 
 
 
@@ -32,33 +35,32 @@ public class RaceFinish : MonoBehaviour
            
             FinishCam.SetActive(true);
             Cam.SetActive(false);
+            TimerMange.SetActive(false);
+
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
-            TimerMange.SetActive(false);
             end.SetActive(true);
             win.SetActive(true);
             PlayAgain.SetActive(true);
-
-
         }
         else
         {
             Debug.Log("GameOver");
-
             Mycar.SetActive(false);
             CompleteTrig.SetActive(false);
             CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
-            LapTimeManager.MintCount = 0;
-            LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;
-            TimerMange.SetActive(false);
             Mycar.SetActive(true);
 
             FinishCam.SetActive(true);
             Cam.SetActive(false);
+            TimerMange.SetActive(false);
+
+            LapTimeManager.MintCount = 0;
+            LapTimeManager.SecCount = 0;
+            LapTimeManager.MilliCount = 0;
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
