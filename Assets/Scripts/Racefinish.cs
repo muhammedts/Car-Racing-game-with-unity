@@ -14,7 +14,7 @@ public class Racefinish : MonoBehaviour {
     public GameObject win;
     public GameObject lose;
     public GameObject PlayAgain;
-    public GameObject MainMenu;
+    public GameObject MAinMenu;
     private void OnTriggerEnter(Collider other)
     {
 
@@ -34,7 +34,7 @@ public class Racefinish : MonoBehaviour {
             end.SetActive(true);
             win.SetActive(true);
             PlayAgain.SetActive(true);
-            MainMenu.SetActive(true);
+            MAinMenu.SetActive(true);
 
             TimerMange.SetActive(false);
             LapTimeManager.MintCount = 0;
@@ -59,7 +59,7 @@ public class Racefinish : MonoBehaviour {
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
-            MainMenu.SetActive(true);
+            MAinMenu.SetActive(true);
             
             TimerMange.SetActive(false);
             
