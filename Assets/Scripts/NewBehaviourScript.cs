@@ -33,8 +33,8 @@ public class NewBehaviourScript : MonoBehaviour {
             end.SetActive(true);
             win.SetActive(true);
              PlayAgain.SetActive(true);
-            /*TimerMange.SetActive(false);
-            LapTimeManager.MintCount = 0;
+            TimerMange.SetActive(false);
+            /*LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;*/
 
@@ -53,8 +53,8 @@ public class NewBehaviourScript : MonoBehaviour {
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
-            /*  TimerMange.SetActive(false);
-              LapTimeManager.MintCount = 0;
+             TimerMange.SetActive(false);
+              /*LapTimeManager.MintCount = 0;
               LapTimeManager.SecCount = 0;
               LapTimeManager.MilliCount = 0;
               */
