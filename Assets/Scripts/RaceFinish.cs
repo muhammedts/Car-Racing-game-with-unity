@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
 
-public class NewBehaviourScript : MonoBehaviour {
-
+public class RaceFinish : MonoBehaviour {
     // Use this for initialization
     public GameObject Mycar;
     public GameObject FinishCam;
@@ -28,16 +27,16 @@ public class NewBehaviourScript : MonoBehaviour {
              Mycar.SetActive(true);
 
             FinishCam.SetActive(true);
-             Cam.SetActive(false);
+            Cam.SetActive(false);
 
 
             end.SetActive(true);
             win.SetActive(true);
-             PlayAgain.SetActive(true);
-            /*TimerMange.SetActive(false);
+            PlayAgain.SetActive(true);
+            TimerMange.SetActive(false);
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;*/
+            LapTimeManager.MilliCount = 0;
 
         }
         else
@@ -55,17 +54,18 @@ public class NewBehaviourScript : MonoBehaviour {
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
-            /*  TimerMange.SetActive(false);
+             TimerMange.SetActive(false);
               LapTimeManager.MintCount = 0;
               LapTimeManager.SecCount = 0;
               LapTimeManager.MilliCount = 0;
-              */
+              
 
 
 
         }
     }
-        void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
