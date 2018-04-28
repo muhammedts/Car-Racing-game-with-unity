@@ -18,6 +18,11 @@ public class MainMenu : MonoBehaviour{
         LapComplete.lapsDone = 0;
         SceneManager.LoadScene("road asmaa and moaaz");
     }
+    public void PlayAgain2()
+    {
+        LapComplete.lapsDone = 0;
+        SceneManager.LoadScene("Track");
+    }
 
     public void QuitGame()
     {
