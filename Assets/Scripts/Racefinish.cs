@@ -21,7 +21,7 @@ public class Racefinish : MonoBehaviour {
         {
             Debug.Log("Winner");
             Mycar.SetActive(false);
-            CarController.m_Topspeed = 0.0f;
+           // CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
@@ -36,15 +36,17 @@ public class Racefinish : MonoBehaviour {
             
             TimerMange.SetActive(false);
             LapTimeManager.MintCount = 0;
+            LapComplete.lapsDone = 0;
+
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
-            
+
+
         }
         else if(other.gameObject.CompareTag("AIcar") && LapCompleteAI.lapsDoneAI == 1)
         {
             Debug.Log("GameOver");
             Mycar.SetActive(false);
-            CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
@@ -60,6 +62,7 @@ public class Racefinish : MonoBehaviour {
             
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
+            LapCompleteAI.lapsDoneAI = 0;
             LapTimeManager.MilliCount = 0;
             
 
@@ -71,7 +74,7 @@ public class Racefinish : MonoBehaviour {
         {
             Debug.Log("GameOver second ai win");
             Mycar.SetActive(false);
-            CarController.m_Topspeed = 0.0f;
+            //CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
@@ -87,6 +90,7 @@ public class Racefinish : MonoBehaviour {
             
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
+            LapCompletesecondAI.lapsDonesecondAI = 0;
             LapTimeManager.MilliCount = 0;
             
         }
