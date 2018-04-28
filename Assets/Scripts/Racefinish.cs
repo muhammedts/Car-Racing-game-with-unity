@@ -33,11 +33,12 @@ public class Racefinish : MonoBehaviour {
             end.SetActive(true);
             win.SetActive(true);
             PlayAgain.SetActive(true);
+            
             TimerMange.SetActive(false);
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
-
+            
         }
         else if(other.gameObject.CompareTag("AIcar") && LapCompleteAI.lapsDoneAI == 1)
         {
@@ -54,10 +55,13 @@ public class Racefinish : MonoBehaviour {
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
+            
             TimerMange.SetActive(false);
+            
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
+            
 
 
 
@@ -78,10 +82,13 @@ public class Racefinish : MonoBehaviour {
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
+            
             TimerMange.SetActive(false);
+            
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
             LapTimeManager.MilliCount = 0;
+            
         }
     }
     // Use this for initialization
