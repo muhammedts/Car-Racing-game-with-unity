@@ -15,6 +15,7 @@ public class NewBehaviourScript : MonoBehaviour {
     public GameObject win;
     public GameObject lose;
     public GameObject PlayAgain;
+    public GameObject MAinMenu;
     private void OnTriggerEnter(Collider other)
     {
 
@@ -33,6 +34,7 @@ public class NewBehaviourScript : MonoBehaviour {
             end.SetActive(true);
             win.SetActive(true);
              PlayAgain.SetActive(true);
+             MAinMenu.SetActive(true);
             TimerMange.SetActive(false);
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
@@ -53,6 +55,7 @@ public class NewBehaviourScript : MonoBehaviour {
             end.SetActive(true);
             lose.SetActive(true);
             PlayAgain.SetActive(true);
+            MAinMenu.SetActive(true);
              TimerMange.SetActive(false);
               LapTimeManager.MintCount = 0;
               LapTimeManager.SecCount = 0;

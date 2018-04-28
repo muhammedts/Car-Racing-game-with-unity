@@ -21675,6 +21675,7 @@ MonoBehaviour:
   win: {fileID: 1099301175}
   lose: {fileID: 1616173034}
   PlayAgain: {fileID: 590774975}
+  MAinMenu: {fileID: 11164862}
 --- !u!1001 &2086916223
 Prefab:
   m_ObjectHideFlags: 0
