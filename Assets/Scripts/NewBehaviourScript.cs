@@ -22,7 +22,6 @@ public class NewBehaviourScript : MonoBehaviour {
         {
             Debug.Log("Winner");
             Mycar.SetActive(false);
-            CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
              Mycar.SetActive(true);
@@ -44,7 +43,6 @@ public class NewBehaviourScript : MonoBehaviour {
         {
             Debug.Log("GameOver");
             Mycar.SetActive(false);
-            CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
