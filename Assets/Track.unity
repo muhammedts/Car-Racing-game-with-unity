@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3458,9 +3458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8714e65ea4e1a46a9bd7c7d6ab455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinuteBox: {fileID: 1939247068}
-  SecBox: {fileID: 2115724556}
-  MilliBox: {fileID: 1380392580}
+  MinuteBox: {fileID: 0}
+  SecBox: {fileID: 0}
+  MilliBox: {fileID: 0}
 --- !u!4 &413912750
 Transform:
   m_ObjectHideFlags: 0
@@ -3472,7 +3472,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 163
+  m_RootOrder: 164
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &420755333
 GameObject:
@@ -11548,7 +11548,7 @@ MonoBehaviour:
   m_MaximumSteerAngle: 25
   m_SteerHelper: 0.774
   m_TractionControl: 1
-  m_FullTorqueOverAllWheels: 2000
+  m_FullTorqueOverAllWheels: 2200
   m_ReverseTorque: 150
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
@@ -14344,7 +14344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 4.339534, z: 42.38297}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 162
+  m_RootOrder: 163
   m_LocalEulerAnglesHint: {x: 0.26200002, y: -0.09900001, z: 0.079}
 --- !u!1001 &1780143096
 Prefab:
