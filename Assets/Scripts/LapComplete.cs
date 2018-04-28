@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityStandardAssets.Vehicles.Car;
 
 public class LapComplete : MonoBehaviour {
 
@@ -18,13 +18,23 @@ public class LapComplete : MonoBehaviour {
     public GameObject RaceFinish;
     public GameObject Player;
     public GameObject Ai;
+    public GameObject Mycar;
+    public GameObject firstAIcar;
+    public GameObject secondAIcar;
+    public GameObject end;
+    public GameObject win;
+    public GameObject lose;
+    public GameObject PlayAgain;
+    public GameObject FinishCam;
+    public GameObject Cam;
+    public GameObject TimerMange;
 
 
 
 
 
 
-    
+
     public static int lapsDone=0;
 
     public float RawTime;
@@ -73,8 +83,24 @@ public class LapComplete : MonoBehaviour {
 
         if (lapsDone == 1 )
         {
-            Debug.Log("finish");
-            RaceFinish.SetActive(true);
+            Mycar.SetActive(false);
+            CarController.m_Topspeed = 0.0f;
+            Mycar.GetComponent<CarController>().enabled = false;
+            Mycar.GetComponent<CarUserControl>().enabled = false;
+            Mycar.GetComponent<CarAudio>().enabled = false;
+
+            Mycar.SetActive(true);
+
+            FinishCam.SetActive(true);
+            Cam.SetActive(false);
+
+            end.SetActive(true);
+            lose.SetActive(true);
+            PlayAgain.SetActive(true);
+            TimerMange.SetActive(false);
+            LapTimeManager.MintCount = 0;
+            LapTimeManager.SecCount = 0;
+            LapTimeManager.MilliCount = 0;
         }
     }
     /*

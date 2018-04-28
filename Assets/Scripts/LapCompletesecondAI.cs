@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Vehicles.Car;
 
-public class LapCompleteAI : MonoBehaviour {
+public class LapCompletesecondAI : MonoBehaviour {
         public GameObject LapCompleteTrigAI;
     public GameObject HalfLapTrigAI;
 
@@ -22,7 +22,8 @@ public class LapCompleteAI : MonoBehaviour {
     public GameObject FinishCam;
     public GameObject Cam;
     public GameObject TimerMange;
-    public static int lapsDoneAI=0;
+
+    public static int lapsDonesecondAI=0;
 
 
     public float RawTime;
@@ -32,10 +33,10 @@ public class LapCompleteAI : MonoBehaviour {
         
        
         
-        if (other.gameObject.CompareTag("AIcar"))
+        if (other.gameObject.CompareTag("AIsecondcar"))
         {
             Debug.Log(other.gameObject.tag);
-            lapsDoneAI += 1;
+            lapsDonesecondAI += 1;
             HalfLapTrigAI.SetActive(true);
             LapCompleteTrigAI.SetActive(false);
 
@@ -43,7 +44,7 @@ public class LapCompleteAI : MonoBehaviour {
         }
 
 
-        if (lapsDoneAI == 1)
+        if (lapsDonesecondAI == 1)
         {
             Mycar.SetActive(false);
             CarController.m_Topspeed = 0.0f;
