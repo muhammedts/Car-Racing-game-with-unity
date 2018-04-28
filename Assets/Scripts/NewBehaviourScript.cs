@@ -34,9 +34,9 @@ public class NewBehaviourScript : MonoBehaviour {
             win.SetActive(true);
              PlayAgain.SetActive(true);
             TimerMange.SetActive(false);
-            /*LapTimeManager.MintCount = 0;
+            LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;*/
+            LapTimeManager.MilliCount = 0;
 
         }
         else
@@ -54,21 +54,14 @@ public class NewBehaviourScript : MonoBehaviour {
             lose.SetActive(true);
             PlayAgain.SetActive(true);
              TimerMange.SetActive(false);
-              /*LapTimeManager.MintCount = 0;
+              LapTimeManager.MintCount = 0;
               LapTimeManager.SecCount = 0;
               LapTimeManager.MilliCount = 0;
-              */
+              
 
 
 
         }
     }
-        void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        
 }
