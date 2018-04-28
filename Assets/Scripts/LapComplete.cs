@@ -38,7 +38,7 @@ public class LapComplete : MonoBehaviour {
             lapsDone += 1;
             Debug.Log(other.gameObject.tag);
             
-      /*
+      
             if (LapTimeManager.SecCount <= 9)
             {
                 SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
@@ -63,7 +63,7 @@ public class LapComplete : MonoBehaviour {
             LapCounter.GetComponent<Text>().text = "" + lapsDone;
             LapTimeManager.MintCount = 0;
             LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;*/
+            LapTimeManager.MilliCount = 0;
             HalfLapTrig.SetActive(true);
             LapCompleteTrig.SetActive(false);
 
