@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class startontrack : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject RaceFinishTrack;
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("akjhasjdw");
+        RaceFinishTrack.SetActive(true);
+
+    }
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -14,3 +23,7 @@ public class startontrack : MonoBehaviour {
 		
 	}
 }
+
+
+
+
