@@ -10246,7 +10246,7 @@ MonoBehaviour:
   win: {fileID: 1582371520}
   lose: {fileID: 1592565801}
   PlayAgain: {fileID: 75881557}
-  MainMenu: {fileID: 0}
+  MAinMenu: {fileID: 2026644597}
 --- !u!23 &447343357
 MeshRenderer:
   m_ObjectHideFlags: 0
