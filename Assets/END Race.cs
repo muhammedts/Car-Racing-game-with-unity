@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class racefinishtrack : MonoBehaviour {
+public class ENDRace : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
