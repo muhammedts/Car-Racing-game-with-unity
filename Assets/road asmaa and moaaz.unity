@@ -10239,6 +10239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mycar: {fileID: 1229654449}
+  carAI1: {fileID: 710734333}
+  carAI2: {fileID: 1193213261}
   FinishCam: {fileID: 1002701967}
   Cam: {fileID: 1668929766}
   TimerMange: {fileID: 1052523495}

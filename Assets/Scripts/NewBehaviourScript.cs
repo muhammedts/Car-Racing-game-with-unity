@@ -8,6 +8,8 @@ public class NewBehaviourScript : MonoBehaviour {
 
     // Use this for initialization
     public GameObject Mycar;
+    public GameObject carAI;
+
     public GameObject FinishCam;
     public GameObject Cam;
     public GameObject TimerMange;
@@ -23,9 +25,12 @@ public class NewBehaviourScript : MonoBehaviour {
         {
             Debug.Log("Winner");
             Mycar.SetActive(false);
+            carAI.SetActive(false);
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
              Mycar.SetActive(true);
+            carAI.SetActive(true);
+
 
             FinishCam.SetActive(true);
              Cam.SetActive(false);
@@ -45,11 +50,14 @@ public class NewBehaviourScript : MonoBehaviour {
         {
             Debug.Log("GameOver");
             Mycar.SetActive(false);
+            carAI.SetActive(false);
+
+
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
-
-              FinishCam.SetActive(true);
+            carAI.SetActive(true);
+            FinishCam.SetActive(true);
             Cam.SetActive(false);
 
             end.SetActive(true);

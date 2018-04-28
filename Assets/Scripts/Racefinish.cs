@@ -7,6 +7,10 @@ public class Racefinish : MonoBehaviour {
 
     // Use this for initialization
     public GameObject Mycar;
+    public GameObject carAI1;
+    public GameObject carAI2;
+
+
     public GameObject FinishCam;
     public GameObject Cam;
     public GameObject TimerMange;
@@ -22,13 +26,18 @@ public class Racefinish : MonoBehaviour {
         {
             Debug.Log("Winner");
             Mycar.SetActive(false);
-           // CarController.m_Topspeed = 0.0f;
+            carAI1.SetActive(false);
+            carAI2.SetActive(false);
+
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
+            carAI1.SetActive(true);
+            carAI2.SetActive(true);
 
             FinishCam.SetActive(true);
             Cam.SetActive(false);
+
 
 
             end.SetActive(true);
@@ -49,9 +58,14 @@ public class Racefinish : MonoBehaviour {
         {
             Debug.Log("GameOver");
             Mycar.SetActive(false);
+            carAI1.SetActive(false);
+            carAI2.SetActive(false);
+
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
+            carAI1.SetActive(true);
+            carAI2.SetActive(true);
 
             FinishCam.SetActive(true);
             Cam.SetActive(false);
@@ -77,10 +91,14 @@ public class Racefinish : MonoBehaviour {
         {
             Debug.Log("GameOver second ai win");
             Mycar.SetActive(false);
+            carAI1.SetActive(false);
+            carAI2.SetActive(false);
             //CarController.m_Topspeed = 0.0f;
             Mycar.GetComponent<CarController>().enabled = false;
             Mycar.GetComponent<CarUserControl>().enabled = false;
             Mycar.SetActive(true);
+            carAI1.SetActive(true);
+            carAI2.SetActive(true);
 
             FinishCam.SetActive(true);
             Cam.SetActive(false);
