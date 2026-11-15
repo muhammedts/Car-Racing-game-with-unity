@@ -1,63 +1,71 @@
-﻿
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// Runs the on-screen lap timer, shown as mm:ss.t.
+/// The counters are static so the lap and finish triggers can read and reset them.
+/// </summary>
 public class LapTimeManager : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
     public static int MintCount;
     public static int SecCount;
-    public static float MilliCount;
+    public static float MilliCount; // tenths of a second, 0-9
     public static string MilliDisplay;
 
     public GameObject MinuteBox;
     public GameObject SecBox;
     public GameObject MilliBox;
 
+    private Text minuteText;
+    private Text secText;
+    private Text milliText;
 
-    // Update is called once per frame
-    void Update()
+    public static void ResetClock()
+    {
+        MintCount = 0;
+        SecCount = 0;
+        MilliCount = 0;
+    }
+
+    public static string FormatMinutes(int minutes)
+    {
+        return minutes.ToString("00") + ":";
+    }
+
+    public static string FormatSeconds(int seconds)
+    {
+        return seconds.ToString("00") + ".";
+    }
+
+    public static string FormatTenths(float tenths)
+    {
+        return Mathf.FloorToInt(tenths).ToString();
+    }
+
+    private void Start()
+    {
+        minuteText = MinuteBox.GetComponent<Text>();
+        secText = SecBox.GetComponent<Text>();
+        milliText = MilliBox.GetComponent<Text>();
+    }
+
+    private void Update()
     {
         MilliCount += Time.deltaTime * 10;
-        MilliDisplay = MilliCount.ToString("F0");
-        MilliBox.GetComponent<Text>().text = "" + MilliDisplay;
         if (MilliCount >= 10)
         {
-            MilliCount = 0;
+            MilliCount -= 10;
             SecCount += 1;
-        }
-        if (SecCount <= 9)
-        {
-
-            SecBox.GetComponent<Text>().text = "0" + SecCount + ".";
-        }
-        else
-        {
-            SecBox.GetComponent<Text>().text = "" + SecCount + ".";
-
         }
         if (SecCount >= 60)
         {
             SecCount = 0;
             MintCount += 1;
         }
-        if (MintCount <= 9)
-        {
 
-            MinuteBox.GetComponent<Text>().text = "0" + MintCount + ":";
-
-        }
-        else
-        {
-            MinuteBox.GetComponent<Text>().text = "" + MintCount + ":";
-
-        }
+        MilliDisplay = FormatTenths(MilliCount);
+        milliText.text = MilliDisplay;
+        secText.text = FormatSeconds(SecCount);
+        minuteText.text = FormatMinutes(MintCount);
     }
 }
-

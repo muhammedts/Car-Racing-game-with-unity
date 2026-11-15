@@ -1,17 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FinishRotate : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+/// <summary>Spins the object slowly around the vertical axis.</summary>
+public class FinishRotate : MonoBehaviour
+{
+    private void Update()
+    {
         transform.Rotate(0, 1, 0, Space.World);
-		
-	}
+    }
 }

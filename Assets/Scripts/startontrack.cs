@@ -1,29 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class startontrack : MonoBehaviour {
-
+/// <summary>Arms the race finish line when a car drives through this trigger.</summary>
+public class startontrack : MonoBehaviour
+{
     public GameObject RaceFinishTrack;
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("akjhasjdw");
         RaceFinishTrack.SetActive(true);
-
     }
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
-
-
-
-

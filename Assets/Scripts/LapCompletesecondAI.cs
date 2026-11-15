@@ -1,40 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityStandardAssets.Vehicles.Car;
+﻿using UnityEngine;
 
-public class LapCompletesecondAI : MonoBehaviour {
-    public GameObject LapCompleteTrigAI;
-    public GameObject HalfLapTrigAI;
-
-
-    public GameObject RaceFinish;
-    public GameObject Player;
-    public GameObject Ai;
-
+/// <summary>Finish-line trigger for the AI car tagged "AIsecondcar". Counts its laps the same way as the player's.</summary>
+public class LapCompletesecondAI : MonoBehaviour
+{
     public static int lapsDonesecondAI = 0;
 
-
-    public float RawTime;
+    public GameObject LapCompleteTrigAI;
+    public GameObject HalfLapTrigAI;
+    public GameObject RaceFinish;
 
     private void OnTriggerEnter(Collider other)
     {
-
-
-
-        if (other.gameObject.CompareTag("AIsecondcar") )
+        if (!other.gameObject.CompareTag("AIsecondcar"))
         {
-            Debug.Log(other.gameObject.tag);
-            lapsDonesecondAI += 1;
-            HalfLapTrigAI.SetActive(true);
-            LapCompleteTrigAI.SetActive(false);
-
-
+            return;
         }
 
+        lapsDonesecondAI += 1;
+        HalfLapTrigAI.SetActive(true);
+        LapCompleteTrigAI.SetActive(false);
 
-        if (lapsDonesecondAI == 1)
+        if (lapsDonesecondAI == LapComplete.RaceLaps)
         {
             RaceFinish.SetActive(true);
         }

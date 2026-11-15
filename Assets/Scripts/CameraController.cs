@@ -1,20 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>Keeps the camera facing the car's heading while staying level.</summary>
 public class CameraController : MonoBehaviour
 {
-
     public GameObject player;
 
-    public float carx;
-    public float cary;
-    public float carz;
-
-    void Update()
+    private void Update()
     {
-        carx = player.transform.eulerAngles.x;
-        cary = player.transform.eulerAngles.y;
-        carz = player.transform.eulerAngles.z;
-        transform.eulerAngles = new Vector3(carx - carx,cary, carz - carz);
+        transform.eulerAngles = new Vector3(0, player.transform.eulerAngles.y, 0);
     }
-}   
+}
