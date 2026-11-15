@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
-
-public class NewBehaviourScript : MonoBehaviour {
-
-    // Use this for initialization
+/// <summary>
+/// Finish line on the smaller track, which has one AI opponent: the player wins by reaching it
+/// first, and loses if anything else gets there first.
+/// (The class keeps its original name because the scene refers to it by this name.)
+/// </summary>
+public class NewBehaviourScript : MonoBehaviour
+{
     public GameObject Mycar;
     public GameObject carAI;
 
@@ -18,61 +19,29 @@ public class NewBehaviourScript : MonoBehaviour {
     public GameObject lose;
     public GameObject PlayAgain;
     public GameObject MAinMenu;
+
     private void OnTriggerEnter(Collider other)
     {
+        bool playerWon = other.gameObject.CompareTag("playercar");
 
-        if (other.gameObject.CompareTag("playercar"))
-        {
-            Debug.Log("Winner");
-            Mycar.SetActive(false);
-            carAI.SetActive(false);
-            Mycar.GetComponent<CarController>().enabled = false;
-            Mycar.GetComponent<CarUserControl>().enabled = false;
-             Mycar.SetActive(true);
-            carAI.SetActive(true);
+        // Briefly deactivating the cars stops them in place; the player's controls stay off.
+        Mycar.SetActive(false);
+        carAI.SetActive(false);
+        Mycar.GetComponent<CarController>().enabled = false;
+        Mycar.GetComponent<CarUserControl>().enabled = false;
+        Mycar.SetActive(true);
+        carAI.SetActive(true);
 
+        FinishCam.SetActive(true);
+        Cam.SetActive(false);
 
-            FinishCam.SetActive(true);
-             Cam.SetActive(false);
+        end.SetActive(true);
+        (playerWon ? win : lose).SetActive(true);
+        PlayAgain.SetActive(true);
+        MAinMenu.SetActive(true);
 
-
-            end.SetActive(true);
-            win.SetActive(true);
-             PlayAgain.SetActive(true);
-             MAinMenu.SetActive(true);
-            TimerMange.SetActive(false);
-            LapTimeManager.MintCount = 0;
-            LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;
-
-        }
-        else
-        {
-            Debug.Log("GameOver");
-            Mycar.SetActive(false);
-            carAI.SetActive(false);
-
-
-            Mycar.GetComponent<CarController>().enabled = false;
-            Mycar.GetComponent<CarUserControl>().enabled = false;
-            Mycar.SetActive(true);
-            carAI.SetActive(true);
-            FinishCam.SetActive(true);
-            Cam.SetActive(false);
-
-            end.SetActive(true);
-            lose.SetActive(true);
-            PlayAgain.SetActive(true);
-            MAinMenu.SetActive(true);
-             TimerMange.SetActive(false);
-              LapTimeManager.MintCount = 0;
-              LapTimeManager.SecCount = 0;
-              LapTimeManager.MilliCount = 0;
-              
-
-
-
-        }
+        TimerMange.SetActive(false);
+        LapTimeManager.ResetClock();
+        LapComplete.ResetAllLaps();
     }
-        
 }

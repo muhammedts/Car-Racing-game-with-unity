@@ -1,21 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class HalfPointTrig : MonoBehaviour {
-
+/// <summary>
+/// Half-way checkpoint for the car tagged "playercar". Passing it arms the finish line,
+/// so a lap only counts after driving the whole track.
+/// </summary>
+public class HalfPointTrig : MonoBehaviour
+{
     public GameObject LapCompleteTrig;
     public GameObject HalfLapTrig;
-    
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "playercar")
+        if (other.gameObject.CompareTag("playercar"))
         {
-            Debug.Log("playerhalf");
             LapCompleteTrig.SetActive(true);
             HalfLapTrig.SetActive(false);
         }
-       
     }
-
 }

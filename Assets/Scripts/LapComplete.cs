@@ -1,10 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityStandardAssets.Vehicles.Car;
 
-public class LapComplete : MonoBehaviour {
+/// <summary>
+/// Finish-line trigger for the player's car. Records the lap time, counts the lap and
+/// re-arms the half-way checkpoint, so a lap only counts after driving the whole track.
+/// </summary>
+public class LapComplete : MonoBehaviour
+{
+    /// <summary>Laps needed to finish a race.</summary>
+    public const int RaceLaps = 1;
+
+    public static int lapsDone = 0;
 
     public GameObject LapCompleteTrig;
     public GameObject HalfLapTrig;
@@ -12,71 +18,38 @@ public class LapComplete : MonoBehaviour {
     public GameObject MinuteDisplay;
     public GameObject SecDisplay;
     public GameObject MilliDisplay;
-    public GameObject LapTimeBox;
     public GameObject LapCounter;
     public GameObject RaceFinish;
-    public GameObject Player;
-    public GameObject Ai;
 
-
-
-
-
-
-
-    public static int lapsDone = 0;
-
-    public float RawTime;
+    /// <summary>Clears every car's lap count, ready for a new race.</summary>
+    public static void ResetAllLaps()
+    {
+        lapsDone = 0;
+        LapCompleteAI.lapsDoneAI = 0;
+        LapCompletesecondAI.lapsDonesecondAI = 0;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-
-
-        if (other.gameObject.CompareTag("playercar"))
+        if (!other.gameObject.CompareTag("playercar"))
         {
-
-            lapsDone += 1;
-            Debug.Log(other.gameObject.tag);
-            
-      
-            if (LapTimeManager.SecCount <= 9)
-            {
-                SecDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecCount + ".";
-            }
-            else
-            {
-
-                SecDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecCount + ".";
-
-            }
-            if (LapTimeManager.MintCount <= 9)
-            {
-                MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MintCount + ":";
-            }
-            else
-            {
-
-                MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MintCount + ":";
-
-            }
-            MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
-            LapCounter.GetComponent<Text>().text = "" + lapsDone;
-            LapTimeManager.MintCount = 0;
-            LapTimeManager.SecCount = 0;
-            LapTimeManager.MilliCount = 0;
-            HalfLapTrig.SetActive(true);
-            LapCompleteTrig.SetActive(false);
-
-
+            return;
         }
 
+        lapsDone += 1;
 
-        if (lapsDone == 1)
+        MinuteDisplay.GetComponent<Text>().text = LapTimeManager.FormatMinutes(LapTimeManager.MintCount);
+        SecDisplay.GetComponent<Text>().text = LapTimeManager.FormatSeconds(LapTimeManager.SecCount);
+        MilliDisplay.GetComponent<Text>().text = LapTimeManager.FormatTenths(LapTimeManager.MilliCount);
+        LapCounter.GetComponent<Text>().text = lapsDone.ToString();
+        LapTimeManager.ResetClock();
+
+        HalfLapTrig.SetActive(true);
+        LapCompleteTrig.SetActive(false);
+
+        if (lapsDone == RaceLaps)
         {
-            Debug.Log("finish");
             RaceFinish.SetActive(true);
         }
     }
-   
-
 }

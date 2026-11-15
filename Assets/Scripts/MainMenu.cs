@@ -1,37 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour{
+/// <summary>
+/// Button handlers for the main menu and the end-of-race screen.
+/// The method names are wired to UI buttons in the scenes, so they must not be renamed.
+/// </summary>
+public class MainMenu : MonoBehaviour
+{
+    private const string MenuScene = "Menu";
+    private const string EasyTrackScene = "Track";                // one AI opponent
+    private const string HardTrackScene = "road asmaa and moaaz"; // town track, two AI opponents
 
     public void LowDifficulty()
     {
-        SceneManager.LoadScene("Track");
+        Load(EasyTrackScene);
     }
+
     public void HighDifficulty()
     {
-        SceneManager.LoadScene("road asmaa and moaaz");
+        Load(HardTrackScene);
     }
+
     public void PlayAgain()
     {
-        LapComplete.lapsDone = 0;
-        SceneManager.LoadScene("road asmaa and moaaz");
+        Load(HardTrackScene);
     }
+
     public void PlayAgain2()
     {
-        LapComplete.lapsDone = 0;
-        SceneManager.LoadScene("Track");
+        Load(EasyTrackScene);
     }
+
     public void MAinMenu()
     {
-        LapComplete.lapsDone = 0;
-        SceneManager.LoadScene("Menu");
+        Load(MenuScene);
     }
 
     public void QuitGame()
     {
-        Debug.Log("QUIT!");
         Application.Quit();
+    }
+
+    private static void Load(string scene)
+    {
+        LapComplete.ResetAllLaps();
+        LapTimeManager.ResetClock();
+        SceneManager.LoadScene(scene);
     }
 }

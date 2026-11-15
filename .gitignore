@@ -32,3 +32,13 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Newer Unity versions and editors
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+.vscode/
+.idea/
+.DS_Store
+*.apk
+*.aab
